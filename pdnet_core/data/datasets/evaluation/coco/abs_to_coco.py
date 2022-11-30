@@ -37,7 +37,7 @@ def convert_abstract_to_coco(dataset, num_workers=None, chunksize=100):
             requesting new task. The larger the less overhead there is.
     """
 
-    logger = logging.getLogger("maskrcnn_benchmark.inference")
+    logger = logging.getLogger("pdnet_core.inference")
     assert isinstance(dataset, AbstractDataset)
     # Official COCO annotations have these fields
     # 'info', 'licenses', 'images', 'type', 'annotations', 'categories'

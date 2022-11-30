@@ -20,7 +20,7 @@ def do_coco_evaluation(
     expected_results_sigma_tol,
 ):
 
-    logger = logging.getLogger("maskrcnn_benchmark.inference")
+    logger = logging.getLogger("pdnet_core.inference")
     logger.info("Converting annotations to COCO format...")
     coco_annotation_dict = convert_abstract_to_coco(dataset)
 
