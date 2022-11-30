@@ -5,7 +5,7 @@ A PyTorch implementation of [PDNet: Toward Better One-Stage Object Detection Wit
 
 ## Introduction
 
-We propose a **P**rediction-target-**D**ecoupled **Net**work (PDNet) for object detection, which decouples the prediction of different targets (*i.e.*, object category and boundaries) into their respective proper positions. The figure below is a visualization of the decoupled regression predictions for object box localization. This allows us to flexibly collect accurate predictions for each object box boundary. For more details on *Prediction Decoupling*, please refer to [our paper](https://ieeexplore.ieee.org/document/9844453).
+We propose a **P**rediction-target-**D**ecoupled **Net**work (PDNet) for object detection, which decouples the prediction of different targets (*i.e.*, object category and boundaries) into their respective proper positions. The figure below is a visualization of the decoupled regression predictions for localizing each object box boundary. This allows us to collect accurate predictions for these targets separately. For more details on *Prediction Decoupling*, please refer to [our paper](https://ieeexplore.ieee.org/document/9844453).
 
 ![reg_pred_map](demo/demo_reg_pred_map.png)
 
@@ -31,8 +31,8 @@ PDNet_R_101_FPN_2xx | 180k | [480, 960] | 46.6 | [config](configs/pdnet/pdnet_R_
 PDNet_X_101_64x4d_FPN_2x | 180k | [640, 800] | 47.4 | [config](configs/pdnet/pdnet_X_101_64x4d_FPN_2x.yaml) / [weights](https://drive.google.com/file/d/19InjLGN0SPcGXJglImNlspSaLWK1tG6y/view?usp=sharing)
 PDNet_X_101_64x4d_FPN_2xx | 180k | [480, 960] | 48.7 | [config](configs/pdnet/pdnet_X_101_64x4d_FPN_2xx.yaml) / [weights](https://drive.google.com/file/d/1RbEDDH2ArHhoyBFf5SVIvZmjb7bhb02H/view?usp=sharing)
 
-[1] *2x means the model is trained for 180k iterations ($\approx$ 24 epochs)* with multi-scale training ([640, 800]), while 2xx denotes using a wider training scale range [480, 960]. \
-[2] Thanks to efficient prediction decoupling, our model has a similar inference time to [FCOS](https://github.com/tianzhi0549/FCOS) while achieving significantly higher accuracy.
+[1] 2x means the model is trained for 180k iterations ( $\approx$ 24 epochs) with multi-scale training ([640, 800]), while 2xx denotes using a wider training scale range [480, 960]. \
+[2] With efficient prediction decoupling, our model has a similar inference time to [FCOS](https://github.com/tianzhi0549/FCOS) while achieving significantly higher accuracy.
 
 ## Inference
 Evaluate the trained model on the minival split of MS COCO dataset:
