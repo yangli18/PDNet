@@ -53,7 +53,7 @@ def do_train(
     test_period,
     arguments,
 ):
-    logger = logging.getLogger("maskrcnn_benchmark.trainer")
+    logger = logging.getLogger("pdnet_core.trainer")
     logger.info("Start training")
     meters = MetricLogger(delimiter="  ")
     max_iter = len(data_loader)
